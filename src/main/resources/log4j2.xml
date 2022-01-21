@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Specify the refresh internal in seconds. -->
+<Configuration monitorInterval="300" packages="org.apereo.cas.logging">
+
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%highlight{%d %p [%c] - &lt;%m&gt;}%n"/>
+        </Console>
+        <CasAppender name="casConsole">
+            <AppenderRef ref="console" />
+        </CasAppender>
+    </Appenders>
+    <Loggers>
+        <!-- If adding a Logger with level set higher than warn, make category as selective as possible -->
+        <!-- Loggers inherit appenders from Root Logger unless additivity is false -->
+
+        <AsyncLogger name="org.springframework.data" level="warn" includeLocation="true" />
+        <AsyncLogger name="org.springframework.cloud" level="warn" includeLocation="true" />
+        <AsyncLogger name="org.springframework.context" level="warn" includeLocation="true" />
+        <AsyncLogger name="dg.template.cas" level="info" includeLocation="true" />
+
+        <!-- All Loggers inherit appenders specified here, unless additivity="false" on the Logger -->
+        <AsyncRoot level="info">
+            <AppenderRef ref="casConsole"/>
+        </AsyncRoot>
+    </Loggers>
+</Configuration>

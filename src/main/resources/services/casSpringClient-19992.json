@@ -1,0 +1,9 @@
+{
+  "@class" : "org.apereo.cas.services.RegexRegisteredService",
+  "serviceId" : "http://(localhost:8080)/.*",
+  "logoutUrl": "http://localhost:8080/cas/logout",
+  "name" : "CAS Spring Another Secured App",
+  "description": "This is a Spring App that uses the CAS Server for it's authentication",
+  "id" : 19992,
+  "evaluationOrder" : 1
+}
