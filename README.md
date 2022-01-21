@@ -18,7 +18,7 @@ This project has also the following drawbacks:
 
 The project is compiled and run by IDE. The following address is visited in the browser.
 ```bash
-https://localhost:8443
+https://localhost:8443/cas/login
 ```
 
 The default username and password is same as in cas-overlay-template.
