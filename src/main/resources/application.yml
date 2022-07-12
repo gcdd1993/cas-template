@@ -1,0 +1,21 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+cas:
+  authn:
+    accept:
+      users: casuser::Mellon
+  server:
+    name: https://localhost:8443
+    prefix: ${cas.server.name}/cas
+  service-registry:
+    json:
+      location: classpath:/services
+    core:
+      init-from-json: true
+server:
+  port: 8443
+  servlet:
+    context-path: /cas
+  ssl:
+    enabled: false
